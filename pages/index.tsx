@@ -7,6 +7,7 @@ import {
 } from '@thirdweb-dev/react'
 import { ListingNotFoundError, ListingType } from '@thirdweb-dev/sdk'
 import { BanknotesIcon, ClockIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 const Home = () => {
   const {contract} = useContract(process.env.NEXT_PUBLIC_MARKETPLACE_CONTRACT , "marketplace")
@@ -25,9 +26,12 @@ const Home = () => {
      ) : (
        <div className = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto">
          {listings?.map(listing => (
-          <div className='flex flex-col card hover:scale-105 transition-all duration-150 ease-out' key={listing.id}>
+          <Link
+          href={`/listing/${listing.id }`}
+          >
+           <div className='flex flex-col card hover:scale-105 transition-all duration-150 ease-out' key={listing.id}>
            <div className='flex flex-1 flex-col pb-2 items-center'>
-            <MediaRenderer src={listing.asset.image}  className = 'w-44'/>
+            <MediaRenderer src={listing.asset.image}  className = 'w-44 h-44'/>
            </div>
            <div className='pt-2 space-y-4'>
             <div>
@@ -57,6 +61,10 @@ const Home = () => {
 
 
           </div>
+          
+          
+          </Link>
+         
          ))}
        </div>
      )}
