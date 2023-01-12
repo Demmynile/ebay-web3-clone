@@ -253,7 +253,7 @@ const ListingPage = (props: Props) => {
 					</button>
 				</div>
 
-				{listing.type === ListingType.Direct && offers && (
+				{/* {listing.type === ListingType.Direct && offers && (
 					<div className='grid grid-cols-2 gap-y-2'>
 						<p className='font-bold'>Offers:</p>
 						<p className='font-bold'>{offers.length > 0 ? offers.length : 0 }</p>
@@ -312,9 +312,9 @@ const ListingPage = (props: Props) => {
 							</>
 						))}
 					</div>
-				)}
+				)} */}
 
-				<div className='grid grid-cols-2 space-y-2 items-center justify-end'>
+				{/* <div className='grid grid-cols-2 space-y-2 items-center justify-end'>
 				   <hr className='col-span-2' />
 				   <p className='col-span-2 font-bold'>
 					{listing.type === ListingType.Direct ? "Make an Offer" : "Bid on this Auction"}
@@ -341,7 +341,7 @@ const ListingPage = (props: Props) => {
 				  <button onClick={createBidOrOffer} className='bg-red-600 font-bold text-white rounded-full w-44 py-4 px-10'>
 					{listing.type === ListingType.Direct ? "Offer" : "Bid"}
 				  </button>
-				</div>
+				</div> */}
 			</section>
 		</main>
 	</div>
